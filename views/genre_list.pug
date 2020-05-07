@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  
+  ul
+    each gg in genre_list
+      li 
+        a(href=gg.url) #{gg.name} 
+
+    else
+      li There are no authors.
