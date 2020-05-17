@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 #{title}: #{bookinstance._id}
+
+  div
+    p #[strong Title:]
+      a(href=bookinstance.url) #{bookinstance.book.title}
+    p #[strong Imprint:] #{bookinstance.imprint}
+    p #[strong Status:] #{bookinstance.status}
+
+  form(method='POSt' action='')
+    div.form-group
+      input#bookinstanceid.form-control(type='hidden',name='bookinstanceid', required='true', value=bookinstance._id )
+      button.btn.btn-primary(type='submit') Delete
